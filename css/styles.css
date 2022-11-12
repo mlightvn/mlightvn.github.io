@@ -1,0 +1,10 @@
+.move-2-top-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0.33;
+}
+
+.move-2-top-icon:hover {
+  opacity: 1;
+}
