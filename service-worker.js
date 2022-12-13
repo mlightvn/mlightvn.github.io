@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f1a9f9a6cefb17e89fac594a50ada66c.js"
+  "/precache-manifest.ed5254d0c0614e1091e4ec4f70fb7d0b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "mlightvn.github.io"});
