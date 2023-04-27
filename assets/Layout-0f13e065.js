@@ -1,0 +1,1 @@
+import{o as t,h as n,k as s}from"./index-43387229.js";const a={data(){return{menuitems:null}}},o=Object.assign(a,{__name:"Layout",setup(m){return(e,u)=>(t(),n(s,{menuitems:e.menuitems},null,8,["menuitems"]))}});export{o as default};
