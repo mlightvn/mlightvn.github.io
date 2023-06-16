@@ -1,1 +1,0 @@
-import{_ as t}from"./Index-7d7a98b8.js";import{o as a,h as e,w as o,j as r,b as _}from"./index-5b66cff4.js";import"./Configuration-fd99b0fa.js";import"./CopyMixin.vue_vue_type_script_setup_true_lang-dfc15996.js";import"./Card-ce898755.js";const u={__name:"Index",setup(s){return(c,m)=>(a(),e(r,null,{default:o(()=>[_(t)]),_:1}))}};export{u as default};

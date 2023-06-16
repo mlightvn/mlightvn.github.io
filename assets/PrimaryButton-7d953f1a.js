@@ -1,1 +1,0 @@
-import{_ as e,o,c as n,i as r}from"./index-ec7baba7.js";const s={},c={type:"button",class:"btn btn-primary me-1"};function a(t,_){return o(),n("button",c,[r(t.$slots,"default")])}const l=e(s,[["render",a]]);export{l as P};

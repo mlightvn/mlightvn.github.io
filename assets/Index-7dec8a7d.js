@@ -1,1 +1,0 @@
-import{_ as t}from"./Index-15d47b4f.js";import{o as a,h as e,w as o,j as r,b as _}from"./index-e7c69383.js";import"./Configuration-8f6968ec.js";import"./CopyMixin-34510f55.js";import"./Card-11a1ab65.js";const u={__name:"Index",setup(s){return(c,m)=>(a(),e(r,null,{default:o(()=>[_(t)]),_:1}))}};export{u as default};
