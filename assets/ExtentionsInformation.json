@@ -1,0 +1,24 @@
+{
+    "list": [
+        {
+            "label": "Password Generator",
+            "url": "https://chromewebstore.google.com/detail/password-generator/kdphoepjncikejlidejpdnfegoidfjnk?hl=en"
+        },
+        {
+            "label": "Resize Images",
+            "url": "https://chromewebstore.google.com/detail/resize-images/mabpkdnmcnncchnebpdojphjidabmnhk?hl=en&pli=1"
+        },
+        {
+            "label": "QrCode Generator",
+            "url": "https://chromewebstore.google.com/detail/qrcode-generator/bfkjcmopaepjkignegcemfmlgcghglfa"
+        },
+        {
+            "label": "Japanese - Vietnamese JLPT Flashcard",
+            "url": "https://chromewebstore.google.com/detail/japanese-vietnamese-jlpt/cipijogmcipmhmjhdgabdfejlagbkdkl?hl=en"
+        },
+        {
+            "label": "Images downloader",
+            "url": "https://chromewebstore.google.com/detail/images-downloader/baoegbochgbibnemchglnnnnnnmmellf"
+        }
+    ]
+}
