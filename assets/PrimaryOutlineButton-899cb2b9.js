@@ -1,0 +1,1 @@
+import{_ as e,o as n,c as o,j as r}from"./index-3336d5e3.js";const s={},c={type:"button",class:"btn btn-outline-primary"};function a(t,_){return n(),o("button",c,[r(t.$slots,"default")])}const i=e(s,[["render",a]]);export{i as P};

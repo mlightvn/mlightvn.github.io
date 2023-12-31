@@ -1,0 +1,1 @@
+import{_ as e,o,c as n,j as r}from"./index-3336d5e3.js";const s={},c={type:"button",class:"btn btn-primary me-1"};function a(t,_){return o(),n("button",c,[r(t.$slots,"default")])}const m=e(s,[["render",a]]);export{m as P};
