@@ -1,0 +1,1 @@
+import{_ as s,r,o,c as n,j as t,i as c,b as l,T as m,F as _}from"./index-3336d5e3.js";const p={};function u(e,d){const a=r("vue3-snackbar");return o(),n(_,null,[t(e.$slots,"default"),t(e.$slots,"smartphone"),(o(),c(m,{to:"body"},[l(a,{bottom:"",duration:3e3})]))],64)}const i=s(p,[["render",u]]);export{i as D};
