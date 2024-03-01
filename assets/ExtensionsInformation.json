@@ -1,6 +1,10 @@
 {
     "list": [
         {
+            "label": "Web Blocker",
+            "url": "https://chromewebstore.google.com/detail/webblock/moeaphcefpdhcniepjhpjenemkopoclj"
+        },
+        {
             "label": "Password Generator",
             "url": "https://chromewebstore.google.com/detail/password-generator/kdphoepjncikejlidejpdnfegoidfjnk?hl=en"
         },
