@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as s,a as o}from"./index-1f795b3d.js";const c={},n={type:"button",class:"btn btn-secondary me-1"},a=o("i",{class:"fa-solid fa-xmark"},null,-1),_=[a];function r(d,i){return e(),s("button",n,_)}const f=t(c,[["render",r]]);export{f as R};

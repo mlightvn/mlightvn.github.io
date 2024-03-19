@@ -1,1 +1,0 @@
-import{D as o}from"./DeviceLayoutTemplate-aa4e3d51.js";import{e as t,r,o as a,i as n,w as s,b as c}from"./index-1778b19f.js";const l=t({__name:"DeviceSmartphoneLayout",setup(p){return(m,_)=>{const e=r("router-view");return a(),n(o,null,{smartphone:s(()=>[c(e)]),_:1})}}});export{l as default};
