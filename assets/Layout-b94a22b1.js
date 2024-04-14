@@ -1,1 +1,0 @@
-import{e as n,o as t,i as a,k as s}from"./index-95b19f87.js";const m={data(){return{menuitems:null}}},r=n({...m,__name:"Layout",setup(o){return(e,u)=>(t(),a(s,{menuitems:e.menuitems},null,8,["menuitems"]))}});export{r as default};
