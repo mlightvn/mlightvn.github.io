@@ -1,0 +1,1 @@
+import{e as n,o as t,i as s,k as o}from"./index-874e2611.js";const a={data(){return{menuitems:[{label:"Extensions",list:[{label:"Chrome Extensions",to:"/extensions/information"}]}]}}},_=n({...a,__name:"Layout",setup(m){return(e,i)=>(t(),s(o,{menuitems:e.menuitems},null,8,["menuitems"]))}});export{_ as default};
