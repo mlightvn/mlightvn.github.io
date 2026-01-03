@@ -1,0 +1,1 @@
+import{e as n,o as t,i as s,j as o}from"./index-e823abe2.js";const a={data(){return{menuitems:[{label:"Extensions",list:[{label:"Chrome Extensions",to:"/extensions/information"}]}]}}},_=n({...a,__name:"Layout",setup(m){return(e,i)=>(t(),s(o,{menuitems:e.menuitems},null,8,["menuitems"]))}});export{_ as default};
