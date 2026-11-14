@@ -3,213 +3,180 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>try{if(!localStorage.getItem('vk-lang')){var b=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().slice(0,2);if(b==='vi'||b==='ja'||b==='zh')location.replace(b+'/'+location.hash)}}catch(e){}</script>
-<title>VietKeys — Vietnamese typing for Windows (Telex, VNI)</title>
-<meta name="description" content="Free Vietnamese typing app for Windows 10 and 11. Telex and VNI in every app, correct in Windows 11 Notepad, works alongside Japanese, Chinese and Korean input methods. No internet connection.">
-<link rel="canonical" href="https://vietkeys.com/">
-<link rel="alternate" hreflang="en" href="https://vietkeys.com/">
-<link rel="alternate" hreflang="vi" href="https://vietkeys.com/vi/">
-<link rel="alternate" hreflang="ja" href="https://vietkeys.com/ja/">
-<link rel="alternate" hreflang="zh-Hans" href="https://vietkeys.com/zh/">
-<link rel="alternate" hreflang="x-default" href="https://vietkeys.com/">
-<meta name="theme-color" content="#05080f">
-<link rel="icon" href="favicon.ico" sizes="any">
+<title>nExcel — WBS &amp; schedule on a shared folder</title>
+<meta name="description" content="nExcel: an Excel-like WBS and schedule tool for teams on a Windows file share. No server, no internet, no install. Auto-scheduling with Japanese holidays and member leave, Gantt, 予実 report, Excel import/export.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="VietKeys">
-<meta property="og:title" content="VietKeys — Vietnamese typing for Windows (Telex, VNI)">
-<meta property="og:description" content="Free Vietnamese typing app for Windows 10 and 11. Telex and VNI in every app, correct in Windows 11 Notepad, works alongside Japanese, Chinese and Korean input methods. No internet connection.">
-<meta property="og:url" content="https://vietkeys.com/">
-<meta property="og:image" content="https://vietkeys.com/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/style.css?v=7fdccb9364">
-<script src="assets/app.js?v=90729b229d" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VietKeys","description":"Free Vietnamese typing app for Windows 10 and 11. Telex and VNI in every app, correct in Windows 11 Notepad, works alongside Japanese, Chinese and Korean input methods. No internet connection.","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","softwareVersion":"0.2.0","datePublished":"2026-11-08","fileSize":"0.5 MB","downloadUrl":"https://vietkeys.com/download/VietKeys-Setup-0.2.0.exe","url":"https://vietkeys.com/","inLanguage":["en","vi","ja"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Nguyen Ngoc Nam","url":"https://www.linkedin.com/in/nguyenngocnam/"},"image":"https://vietkeys.com/og.png"}</script>
+<meta property="og:title" content="nExcel — WBS & schedule on a shared folder">
+<meta property="og:description" content="Excel-like WBS for teams on a file share. No server. Auto-scheduling, Gantt, 予実 report.">
+<meta property="og:image" content="https://mlightvn.github.io/img/grid.png">
+<style>
+:root {
+  --bg: #f4f5f7; --panel: #fff; --line: #e2e5ea; --text: #16191f; --text-2: #3a404b; --muted: #5b6270;
+  --brand: #0b6e4f; --brand-dark: #08543c; --brand-soft: #e6f2ec;
+  --sans: 'Segoe UI', 'Yu Gothic UI', Meiryo, system-ui, sans-serif; --mono: Consolas, 'Cascadia Mono', monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+a { color: var(--brand); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+header.top { background: var(--panel); border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; gap: 12px; min-height: 56px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; }
+.logo img { width: 30px; height: 30px; }
+.langs { margin-left: auto; display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.langs button { border: 0; border-left: 1px solid var(--line); background: var(--panel); padding: 6px 12px; cursor: pointer; font: inherit; font-size: 14px; color: var(--text-2); min-height: 36px; }
+.langs button:first-child { border-left: 0; }
+.langs button[aria-pressed="true"] { background: var(--brand); color: #fff; font-weight: 600; }
+.hero { padding: 56px 0 32px; }
+.hero h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.2; margin: 0 0 12px; }
+.hero p.lead { font-size: 18px; color: var(--text-2); max-width: 760px; margin: 0 0 24px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 10px 20px; border-radius: 8px; border: 1px solid var(--brand); font-weight: 600; text-decoration: none; font-size: 16px; }
+.btn.primary { background: var(--brand); color: #fff; }
+.btn.primary:hover { background: var(--brand-dark); }
+.btn.ghost { background: var(--panel); color: var(--brand); }
+.btn.ghost:hover { background: var(--brand-soft); }
+.note { font-size: 13px; color: var(--muted); }
+.shot { margin: 28px 0 8px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--panel); box-shadow: 0 10px 40px rgba(22, 25, 31, 0.08); }
+.shot img { display: block; width: 100%; height: auto; }
+section { padding: 32px 0; }
+h2 { font-size: 26px; margin: 0 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; color: var(--text-2); font-size: 15px; }
+.how { counter-reset: s; list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 10px; }
+.how li { counter-increment: s; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 14px 56px; position: relative; color: var(--text-2); }
+.how li::before { content: counter(s); position: absolute; left: 16px; top: 14px; width: 26px; height: 26px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+pre { background: #16191f; color: #e8eaed; border-radius: 8px; padding: 14px; overflow-x: auto; font-family: var(--mono); font-size: 13px; line-height: 1.5; }
+table.dl { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+table.dl td, table.dl th { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; font-size: 15px; vertical-align: top; }
+table.dl th { color: var(--muted); font-weight: 500; width: 30%; }
+code { font-family: var(--mono); font-size: 13px; word-break: break-all; }
+footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+[data-l] { display: none; }
+html[lang="en"] [data-l="en"], html[lang="ja"] [data-l="ja"], html[lang="vi"] [data-l="vi"] { display: revert; }
+@media (max-width: 600px) { table.dl th { width: 38%; } }
+</style>
 </head>
 <body>
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NN4LRD6D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-</script>
-<a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="VietKeys"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#3de0f5" d="M16 0H64V48L48 64H0V16Z"/><path fill="#03131a" d="M14 14h10l8 26 8-26h10L37 52H27Z"/></svg>VietKeys<small>v0.2.0</small></a>
-    <nav class="nav" aria-label="VietKeys">
-      <a href="#features">Features</a>
-      <a href="#reference">Telex &amp; VNI</a>
-      <a href="#install">Install</a>
-      <a href="#faq">FAQ</a>
-      <a class="nav-donate" href="https://ko-fi.com/vietkeysstudio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"/><path d="M17 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 2v2M12 2v2"/></svg>Donate</a>
-    </nav>
-    <div class="top-end">
-      <nav class="langs" aria-label="Language"><a href="./" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a><a href="vi/" hreflang="vi" lang="vi" data-lang="vi">VI</a><a href="ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a><a href="zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">中文</a></nav>
-      <a class="btn small" href="https://vietkeys.com/download/VietKeys-Setup-0.2.0.exe" download>Download</a>
+    <a class="logo" href="./"><img src="icon.svg" alt="" width="30" height="30">nExcel</a>
+    <div class="langs" role="group" aria-label="Language">
+      <button data-set="ja" aria-pressed="false">日本語</button>
+      <button data-set="vi" aria-pressed="false">Tiếng Việt</button>
+      <button data-set="en" aria-pressed="true">EN</button>
     </div>
   </div>
 </header>
 
-<main id="main">
-<section class="hero" id="download">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Free · Windows 10 &amp; 11</span>
-      <h1>Vietnamese typing that works <em>everywhere</em> on Windows</h1>
-      <p class="lead">Telex and VNI in every app — Windows 11 Notepad, browsers, Office, chat — side by side with your Japanese, Chinese or Korean input method. One small app, no Windows keyboard to add.</p>
-      <div class="ctas">
-        <a class="btn" href="https://vietkeys.com/download/VietKeys-Setup-0.2.0.exe" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span class="two">Download Setup<span class="btn-sub">VietKeys-Setup-0.2.0.exe · 0.5 MB</span></span></a>
-        <a class="btn ghost" href="https://vietkeys.com/download/VietKeys-0.2.0.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8Z"/><path d="M14 3v5h5M10 6h1M10 9h1M10 12h1M10 15h2v3h-2Z"/></svg><span class="two">Zip (portable)<span class="btn-sub">install.cmd + guides · 0.2 MB</span></span></a>
-      </div>
-      <p class="meta">Version 0.2.0 · 2026-11-08 · Windows 10/11, 64-bit</p>
-      <ul class="trust"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>No internet, no tracking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>One 0.5 MB file</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Uninstall anytime</li></ul>
+<main class="wrap">
+  <div class="hero">
+    <h1>
+      <span data-l="en">WBS &amp; schedule for your team — on a shared folder.</span>
+      <span data-l="ja">チームの WBS とスケジュールを、共有フォルダーだけで。</span>
+      <span data-l="vi">WBS &amp; tiến độ cho cả team — chỉ cần một thư mục share.</span>
+    </h1>
+    <p class="lead">
+      <span data-l="en">Feels like Excel, schedules itself. Change one effort and every dependent date moves — weekends, Japanese holidays and member leave are skipped automatically. No server, no internet, no install.</span>
+      <span data-l="ja">Excel の使い心地で、日程は自動計算。工数を1つ変えるだけで後続タスクの日付がすべて動き、土日・祝日・メンバーの休暇は自動で除外されます。サーバー不要・インターネット不要・インストール不要。</span>
+      <span data-l="vi">Dùng như Excel, lịch tự tính. Sửa một con số công là mọi task phụ thuộc tự dời ngày — thứ 7, CN, ngày lễ Nhật và ngày nghỉ của thành viên được bỏ qua tự động. Không server, không internet, không cài đặt.</span>
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="app/">
+        <span data-l="en">Open nExcel in the browser</span><span data-l="ja">ブラウザーで nExcel を開く</span><span data-l="vi">Mở nExcel trên trình duyệt</span>
+      </a>
+      <a class="btn ghost" href="download/nExcel_0.1.0_x64-setup.exe">
+        <span data-l="en">Download for Windows</span><span data-l="ja">Windows 版をダウンロード</span><span data-l="vi">Tải bản Windows</span>
+        <span class="note">(1.5 MB)</span>
+      </a>
     </div>
-    <div class="panel demo" data-demo>
-      <div class="demo-bar">
-        <span class="label">Live example</span>
-        <div class="seg" role="group" aria-label="Telex / VNI">
-          <button type="button" data-method="telex" aria-pressed="true">Telex</button>
-          <button type="button" data-method="vni" aria-pressed="false">VNI</button>
-        </div>
-      </div>
-      <div class="demo-body">
-        <div class="demo-row"><span class="label">You type</span><div class="keys" data-keys><kbd>T</kbd><kbd>i</kbd><kbd>e</kbd><kbd>e</kbd><kbd>n</kbd><kbd>g</kbd><kbd>s</kbd></div></div>
-        <div class="demo-row"><span class="label">You get</span><div class="result" data-out aria-live="off">Tiếng Việt</div></div>
-      </div>
-    </div>
+    <p class="note">
+      <span data-l="en">Browser version: Microsoft Edge or Google Chrome. Try the built-in demo project — nothing is saved.</span>
+      <span data-l="ja">ブラウザー版：Microsoft Edge または Google Chrome。内蔵のデモプロジェクトで試せます（保存されません）。</span>
+      <span data-l="vi">Bản trình duyệt: Microsoft Edge hoặc Google Chrome. Có sẵn dự án demo để dùng thử (không lưu gì).</span>
+    </p>
+    <div class="shot"><img src="img/grid.png" alt="nExcel WBS grid" width="1500" height="900"></div>
   </div>
-</section>
 
-<section id="notepad">
-  <div class="wrap split">
-    <div>
-      <p class="kicker">Why VietKeys</p>
-      <h2>Types right in every app, not just Notepad</h2>
-      <p class="section-lead">Typing tools fix a word by sending Backspaces and then the new letters. When several Backspaces arrive at once, some apps (Windows 11 Notepad with a Japanese input method, for example) apply only some of them, and words come out broken. VietKeys sends each Backspace on its own, in order, so words come out right.</p>
-      <p class="footnote">Tested with automated typing in Windows 11 Notepad (with the Microsoft Japanese IME), plain text boxes and rich text boxes.</p>
-    </div>
-    <div class="panel compare">
-      <table>
-        <thead><tr><th scope="col" class="label">Fix sent all at once</th><th scope="col" class="label">VietKeys</th></tr></thead>
-        <tbody><tr><td class="bad">toôi</td><td class="good">tôi</td></tr><tr><td class="bad">dđang</td><td class="good">đang</td></tr><tr><td class="bad">tiêńg</td><td class="good">tiếng</td></tr><tr><td class="bad">chaào</td><td class="good">chào</td></tr></tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section id="features">
-  <div class="wrap">
-    <p class="kicker">Features</p>
-    <h2>Small app, careful typing</h2>
+  <section>
+    <h2><span data-l="en">What it does</span><span data-l="ja">できること</span><span data-l="vi">Làm được gì</span></h2>
     <div class="grid">
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v10H3Z"/><path d="M7 11h.01M11 11h.01M15 11h.01M8 14h8"/></svg></div><h3>Telex and VNI</h3><p>Put marks and tones anywhere in the word (<code>tienge</code> → tiêng). The tone moves to the right vowel as you type: <code>hoaf</code> → hòa, then <code>n</code> → hoàn.</p></article>
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3>Side by side with Japanese, Chinese, Korean</h3><p>While your input method is on (あ / 中 / 한), VietKeys leaves every key to it. Switch it off and you type Vietnamese again — nothing to quit or restart.</p></article>
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h12a3 3 0 0 1 3 3v2a3 3 0 0 1-5 2l-1-1H9l-1 1a3 3 0 0 1-5-2v-2a3 3 0 0 1 3-3Z"/><path d="M8 11v3M6.5 12.5h3M16 12h.01M18 13.5h.01"/></svg></div><h3>Games keep their keys</h3><p>Full-screen games and videos get the real keys — StarCraft control groups 0–9 included. Turn VietKeys off for any other app with one right-click on the tray icon.</p></article>
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5h11v14H9l-6-7Z"/><path d="m12 9 5 6m0-6-5 6"/></svg></div><h3>Backspace that understands words</h3><p>Delete back into a word and conversion comes back: <code>Vi65t ⌫⌫⌫ e65t</code> → Việt. Backspace over the space after a word to keep editing it.</p></article>
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19 9 5l5 14M5.8 14h6.4"/><path d="M15 12.5a2.5 2.5 0 1 1 5 0V19M20 15.5a2.5 2.5 0 1 1-2.5-2.5"/></svg></div><h3>English stays English</h3><p>Words that cannot be Vietnamese are left as you typed them: Windows, class, Notepad, text.</p></article>
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="5"/><circle cx="16" cy="12" r="2.5"/></svg></div><h3>Your switch key, only yours</h3><p><kbd>Ctrl+Shift</kbd>, <kbd>Alt+Z</kbd>, <kbd>Alt+Shift+Z</kbd> or a shortcut you record. Only the one you choose works, so your apps keep their other shortcuts.</p></article>
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 19 12 5l6 14M8.5 14h7"/><path d="m10 2 3 2"/></svg></div><h3>Classic or modern tone marks</h3><p>hóa, khỏe, thủy — or hoá, khoẻ, thuỷ. Your choice.</p></article>
-      <article class="panel feature"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Small and private</h3><p>One 0.5 MB file. No internet connection, nothing collected — what you type stays on your PC. Interface in English, Vietnamese and Japanese.</p></article>
+      <div class="card"><h3><span data-l="en">Excel-like WBS</span><span data-l="ja">Excel 感覚の WBS</span><span data-l="vi">WBS như Excel</span></h3>
+        <p><span data-l="en">Unlimited levels, type to edit, Tab to indent, multi-select, duplicate, Implement → Review → Fix in one click.</span><span data-l="ja">階層は無制限。入力・Tab でインデント・複数選択・複製。「実装→レビュー→修正」をワンクリックで作成。</span><span data-l="vi">Không giới hạn cấp, gõ là sửa, Tab để thụt, chọn nhiều, nhân bản, tạo Làm → Review → Fix bằng một nút.</span></p></div>
+      <div class="card"><h3><span data-l="en">Auto-scheduling</span><span data-l="ja">自動スケジューリング</span><span data-l="vi">Tự lập lịch</span></h3>
+        <p><span data-l="en">Dependencies, critical path, Japanese holidays (built in, offline), company holidays, Vietnam calendar, member leave with impact preview.</span><span data-l="ja">依存関係・クリティカルパス・祝日（内蔵・オフライン）・会社休日・ベトナムカレンダー・休暇の影響プレビュー。</span><span data-l="vi">Phụ thuộc, đường găng, ngày lễ Nhật (có sẵn, offline), ngày nghỉ công ty, lịch Việt Nam, ngày nghỉ thành viên kèm xem trước tác động.</span></p></div>
+      <div class="card"><h3><span data-l="en">Gantt &amp; 予実 report</span><span data-l="ja">ガント・予実レポート</span><span data-l="vi">Gantt &amp; báo cáo 予実</span></h3>
+        <p><span data-l="en">Gantt with baseline, planned-vs-actual S-curve, workload, behind-plan list, weekly report (週次進捗報告) to Excel.</span><span data-l="ja">ベースライン付きガント、予実 S カーブ、負荷、遅延タスク、週次進捗報告の Excel 出力。</span><span data-l="vi">Gantt có baseline, đường S kế hoạch/thực tế, khối lượng, task trễ, báo cáo tuần (週次進捗報告) ra Excel.</span></p></div>
+      <div class="card"><h3><span data-l="en">20 people, nothing lost</span><span data-l="ja">20人同時でも安全</span><span data-l="vi">20 người cùng sửa</span></h3>
+        <p><span data-l="en">Each PC writes only its own change file on the share. Simultaneous edits of the same cell are kept and shown for a decision.</span><span data-l="ja">各PCは共有フォルダー上の自分の変更ファイルにだけ書き込みます。同じセルの同時編集は両方保持され、どちらを採用するか選べます。</span><span data-l="vi">Mỗi máy chỉ ghi file thay đổi của riêng mình trên thư mục share. Hai người sửa cùng một ô thì cả hai giá trị được giữ để chọn.</span></p></div>
+      <div class="card"><h3><span data-l="en">Import your old Excel</span><span data-l="ja">既存の Excel を取り込み</span><span data-l="vi">Nhập file Excel cũ</span></h3>
+        <p><span data-l="en">.xlsx or .csv (Shift_JIS too). Columns recognised in Japanese, Vietnamese and English; levels from WBS numbers, grouping or indent.</span><span data-l="ja">.xlsx・.csv（Shift_JIS 対応）。日本語・ベトナム語・英語の見出しを自動認識。階層は WBS 番号・グループ化・インデントから。</span><span data-l="vi">.xlsx hoặc .csv (cả Shift_JIS). Nhận diện cột tiếng Nhật, Việt, Anh; cấp lấy từ số WBS, nhóm hoặc thụt lề.</span></p></div>
+      <div class="card"><h3><span data-l="en">3 languages</span><span data-l="ja">3言語</span><span data-l="vi">3 ngôn ngữ</span></h3>
+        <p><span data-l="en">日本語 / Tiếng Việt / English — each person picks their own, the data stays the same.</span><span data-l="ja">日本語・ベトナム語・英語を各自で切り替え。データは共通です。</span><span data-l="vi">Mỗi người tự chọn 日本語 / Tiếng Việt / English, dữ liệu vẫn là một.</span></p></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="settings">
-  <div class="wrap">
-    <p class="kicker">Settings</p>
-    <h2>Everything on one screen</h2>
-    <p class="section-lead">Telex or VNI, tone style, switch key, games, and a box to try typing. Right-click the tray icon to open it.</p>
-    <figure class="panel shot"><img src="img/settings-en.png" width="960" height="836" alt="The VietKeys settings window: typing method, tone placement, switch key, interface language and a box to try typing" loading="lazy" decoding="async"></figure>
-  </div>
-</section>
+  <section>
+    <div class="shot"><img src="img/gantt.png" alt="nExcel Gantt chart" width="1500" height="900" loading="lazy"></div>
+  </section>
 
-<section id="reference">
-  <div class="wrap">
-    <p class="kicker">Cheat sheet</p>
-    <h2>Telex and VNI at a glance</h2>
-    <p class="section-lead">Marks and tones can come anywhere in the word.</p>
-    <div class="ref">
-      <div class="panel">
-        <h3>Telex</h3>
-        <table><thead><tr><th scope="col">Keys</th><th scope="col">Result</th></tr></thead><tbody><tr><td><kbd>aa</kbd></td><td>â</td></tr><tr><td><kbd>ee</kbd></td><td>ê</td></tr><tr><td><kbd>oo</kbd></td><td>ô</td></tr><tr><td><kbd>aw</kbd></td><td>ă</td></tr><tr><td><kbd>ow</kbd></td><td>ơ</td></tr><tr><td><kbd>uw</kbd> <kbd>w</kbd></td><td>ư</td></tr><tr><td><kbd>uow</kbd></td><td>ươ</td></tr><tr><td><kbd>dd</kbd></td><td>đ</td></tr><tr><td><kbd>s</kbd></td><td>á<span class="tone">sắc</span></td></tr><tr><td><kbd>f</kbd></td><td>à<span class="tone">huyền</span></td></tr><tr><td><kbd>r</kbd></td><td>ả<span class="tone">hỏi</span></td></tr><tr><td><kbd>x</kbd></td><td>ã<span class="tone">ngã</span></td></tr><tr><td><kbd>j</kbd></td><td>ạ<span class="tone">nặng</span></td></tr><tr><td><kbd>z</kbd></td><td><span class="tone">removes the tone</span></td></tr></tbody></table>
-        <p class="example">Tieengs Vieejt → <b>Tiếng Việt</b></p>
-        <p class="note">Press the same key twice to undo it: <code>ass</code> → as, <code>ww</code> → w.</p>
-      </div>
-      <div class="panel">
-        <h3>VNI</h3>
-        <table><thead><tr><th scope="col">Keys</th><th scope="col">Result</th></tr></thead><tbody><tr><td><kbd>1</kbd></td><td>á<span class="tone">sắc</span></td></tr><tr><td><kbd>2</kbd></td><td>à<span class="tone">huyền</span></td></tr><tr><td><kbd>3</kbd></td><td>ả<span class="tone">hỏi</span></td></tr><tr><td><kbd>4</kbd></td><td>ã<span class="tone">ngã</span></td></tr><tr><td><kbd>5</kbd></td><td>ạ<span class="tone">nặng</span></td></tr><tr><td><kbd>6</kbd></td><td>â ê ô</td></tr><tr><td><kbd>7</kbd></td><td>ơ ư</td></tr><tr><td><kbd>uo7</kbd></td><td>ươ</td></tr><tr><td><kbd>8</kbd></td><td>ă</td></tr><tr><td><kbd>9</kbd></td><td>đ</td></tr><tr><td><kbd>0</kbd></td><td><span class="tone">removes the tone</span></td></tr></tbody></table>
-        <p class="example">Tie6ng1 Vie65t → <b>Tiếng Việt</b></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="install">
-  <div class="wrap">
-    <p class="kicker">Install</p>
-    <h2>Up and running in a minute</h2>
-    <ol class="steps">
-      <li><div class="panel"><h3>Download Setup</h3><p><code>VietKeys-Setup-0.2.0.exe</code>, 0.5 MB. One file, nothing else to download.</p></div></li>
-      <li><div class="panel"><h3>Run it and click Install</h3><p>Pick your language, click Install, then Yes when Windows asks for administrator rights. VietKeys goes to <code>C:\Program Files\VietKeys</code> and starts when you sign in.</p></div></li>
-      <li><div class="panel"><h3>Start typing</h3><p>Look for <b>V</b> in the tray: V = Vietnamese, E = English. Press <kbd>Ctrl+Shift</kbd> to switch.</p></div></li>
+  <section>
+    <h2><span data-l="en">How it works</span><span data-l="ja">しくみ</span><span data-l="vi">Cách hoạt động</span></h2>
+    <ol class="how">
+      <li><span data-l="en">Put a project folder on the file server everyone can reach, e.g. <code>\\fileserver\TaxProject</code>.</span><span data-l="ja">全員がアクセスできるファイルサーバー上にプロジェクトフォルダーを用意します（例：<code>\\fileserver\TaxProject</code>）。</span><span data-l="vi">Tạo một thư mục dự án trên file server mà cả team truy cập được, vd. <code>\\fileserver\TaxProject</code>.</span></li>
+      <li><span data-l="en">Open it in nExcel (browser or Windows app). The first person creates the project; nExcel keeps its data in a hidden <code>.nexcel</code> subfolder.</span><span data-l="ja">nExcel（ブラウザー版または Windows 版）で開きます。最初の人がプロジェクトを作成し、データは隠しフォルダー <code>.nexcel</code> に保存されます。</span><span data-l="vi">Mở thư mục bằng nExcel (bản trình duyệt hoặc bản Windows). Người đầu tiên tạo dự án; dữ liệu nằm trong thư mục ẩn <code>.nexcel</code>.</span></li>
+      <li><span data-l="en">Everyone else opens the same folder (or double-clicks the <code>.nwbs</code> file with the Windows app). Changes appear on every PC within a few seconds.</span><span data-l="ja">他のメンバーも同じフォルダーを開きます（Windows 版なら <code>.nwbs</code> ファイルをダブルクリック）。変更は数秒で全員の画面に反映されます。</span><span data-l="vi">Những người khác mở cùng thư mục (bản Windows thì double-click file <code>.nwbs</code>). Thay đổi hiện trên mọi máy sau vài giây.</span></li>
     </ol>
-    <div class="notes">
-      <div class="note-card"><h3>“Windows protected your PC”?</h3><p>Click <b>More info</b>, then <b>Run anyway</b>. VietKeys is new and not yet signed with a code-signing certificate, so SmartScreen does not know it yet.</p></div>
-      <div class="note-card"><h3>Prefer a zip?</h3><p>Same VietKeys.exe, with install.cmd, uninstall.cmd and a guide in English, Vietnamese, Japanese and Chinese. Or just run VietKeys.exe without installing.</p><a class="btn ghost small" href="https://vietkeys.com/download/VietKeys-0.2.0.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8Z"/><path d="M14 3v5h5M10 6h1M10 9h1M10 12h1M10 15h2v3h-2Z"/></svg>Download zip · 0.2 MB</a></div>
-      <div class="note-card"><h3>Uninstall</h3><p>Settings › Apps › Installed apps › VietKeys › Uninstall. Everything goes, settings included.</p></div>
-    </div>
-    <details class="sums">
-      <summary>Verify the download (SHA-256)</summary>
-      <pre>63cab8b56364fd6b67f76845128941ced22c0936dadf98e0cd1a6ca2d19cb0a0  VietKeys-Setup-0.2.0.exe
-4f0039d635bb0f778aeef299b91f82ccea8285430569ca37b5df4383b3315ee2  VietKeys-0.2.0.zip</pre>
-    </details>
-  </div>
-</section>
+<pre>\\fileserver\TaxProject\
+├── TaxProject.nwbs          ← double-click
+└── .nexcel\
+    ├── changes\
+    │   ├── nam@pc-1a2b-2026-11.jsonl     ← only this PC writes it
+    │   └── tanaka@pc-9f0c-2026-11.jsonl
+    └── snapshots\</pre>
+  </section>
 
-<section id="faq">
-  <div class="wrap">
-    <p class="kicker">FAQ</p>
-    <h2>Questions</h2>
-    <div class="faq">
-      <details><summary>Is VietKeys free?</summary><p>Yes. Download it and use it on as many PCs as you like.</p></details>
-      <details><summary>Does VietKeys send what I type anywhere?</summary><p>No. VietKeys has no network code at all: it never connects to the internet, has no ads or analytics, and keeps its settings in your Windows user profile.</p></details>
-      <details><summary>Why does my antivirus ask about VietKeys?</summary><p>To type Vietnamese in every app, VietKeys watches the keyboard (a low-level keyboard hook, the same way Unikey works). Antivirus programs watch for that. Allow VietKeys.exe if asked.</p></details>
-      <details><summary>Can I use it together with Unikey or EVKey?</summary><p>Use one at a time: two typing tools would both change the same words. VietKeys warns you in its settings window while Unikey is running.</p></details>
-      <details><summary>Vietnamese does not work in one app. Why?</summary><p>If that app runs as administrator, Windows blocks normal apps from changing its keys. Run VietKeys as administrator too, or start that app normally.</p></details>
-      <details><summary>Which Windows versions are supported?</summary><p>Windows 10 and Windows 11, 64-bit. VietKeys is one exe, with no runtimes or other files to install.</p></details>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="panel final">
-      <h2>Ready to type Vietnamese?</h2>
-      <p>Free, small, and made for Windows 10 and 11.</p>
-      <div class="ctas">
-        <a class="btn" href="https://vietkeys.com/download/VietKeys-Setup-0.2.0.exe" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span class="two">Download Setup<span class="btn-sub">VietKeys-Setup-0.2.0.exe · 0.5 MB</span></span></a>
-      </div>
-    </div>
-    <div class="panel final donate">
-      <h2>Support VietKeys Studio</h2>
-      <p>VietKeys stays free. If it helps you, buy us a coffee on Ko-fi.</p>
-      <div class="ctas">
-        <a class="btn ghost" href="https://ko-fi.com/vietkeysstudio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"/><path d="M17 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 2v2M12 2v2"/></svg><span class="two">Support on Ko-fi</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+  <section>
+    <h2><span data-l="en">Download</span><span data-l="ja">ダウンロード</span><span data-l="vi">Tải về</span></h2>
+    <table class="dl">
+      <tr><th><span data-l="en">Windows installer</span><span data-l="ja">Windows インストーラー</span><span data-l="vi">Bộ cài Windows</span></th>
+        <td><a href="download/nExcel_0.1.0_x64-setup.exe">nExcel_0.1.0_x64-setup.exe</a> (1.5 MB)<br>
+          <span class="note"><span data-l="en">Windows 10/11 64-bit. Installs for the current user only — no administrator rights needed. Uses the Microsoft Edge WebView2 runtime that Windows already includes. Associates <code>.nwbs</code> files.</span><span data-l="ja">Windows 10/11（64bit）。現在のユーザーにのみインストールされ、管理者権限は不要です。Windows に含まれる Microsoft Edge WebView2 を使用します。<code>.nwbs</code> ファイルを関連付けます。</span><span data-l="vi">Windows 10/11 64-bit. Cài cho người dùng hiện tại, không cần quyền admin. Dùng Microsoft Edge WebView2 có sẵn trong Windows. Gắn với đuôi file <code>.nwbs</code>.</span></span></td></tr>
+      <tr><th>SHA-256</th><td><code>75ab3fb9e7f418539394149732caeb0bfe0b48a6227388cc0ddfc2611f5cf55c</code></td></tr>
+      <tr><th><span data-l="en">Browser version</span><span data-l="ja">ブラウザー版</span><span data-l="vi">Bản trình duyệt</span></th>
+        <td><a href="app/">mlightvn.github.io/app/</a><br><span class="note"><span data-l="en">One self-contained page; it works offline once loaded and never sends your data anywhere.</span><span data-l="ja">1ファイルで完結。読み込み後はオフラインで動作し、データを外部に送信しません。</span><span data-l="vi">Chỉ một trang duy nhất; đã tải xong là chạy offline và không gửi dữ liệu đi đâu.</span></span></td></tr>
+      <tr><th><span data-l="en">Version</span><span data-l="ja">バージョン</span><span data-l="vi">Phiên bản</span></th><td>0.1.0 · 2026-11-14</td></tr>
+    </table>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p>© 2026 VietKeys · Made by Nguyen Ngoc Nam · <a href="https://www.linkedin.com/in/nguyenngocnam/" rel="author">LinkedIn</a> · <a href="https://ko-fi.com/vietkeysstudio" target="_blank" rel="noopener">Ko-fi</a></p>
-    <nav class="langs" aria-label="Language"><a href="./" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a><a href="vi/" hreflang="vi" lang="vi" data-lang="vi">VI</a><a href="ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a><a href="zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">中文</a></nav>
-  </div>
+  <div class="wrap">© 2026 mlightvn · nExcel</div>
 </footer>
+
+<script>
+(function () {
+  var supported = ['ja', 'vi', 'en'];
+  function pick() {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (supported.indexOf(q) >= 0) return q;
+    try { var s = localStorage.getItem('nexcel.lang'); if (supported.indexOf(s) >= 0) return s; } catch (e) {}
+    var n = (navigator.language || 'en').toLowerCase();
+    return n.indexOf('ja') === 0 ? 'ja' : n.indexOf('vi') === 0 ? 'vi' : 'en';
+  }
+  function set(l) {
+    document.documentElement.lang = l;
+    var bs = document.querySelectorAll('.langs button');
+    for (var i = 0; i < bs.length; i++) bs[i].setAttribute('aria-pressed', String(bs[i].getAttribute('data-set') === l));
+    try { localStorage.setItem('nexcel.lang', l); } catch (e) {}
+  }
+  document.querySelector('.langs').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (b) set(b.getAttribute('data-set'));
+  });
+  set(pick());
+})();
+</script>
 </body>
 </html>

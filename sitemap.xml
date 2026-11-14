@@ -1,39 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://vietkeys.com/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vietkeys.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://vietkeys.com/vi/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://vietkeys.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vietkeys.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vietkeys.com/"/>
-  </url>
-  <url>
-    <loc>https://vietkeys.com/vi/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vietkeys.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://vietkeys.com/vi/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://vietkeys.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vietkeys.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vietkeys.com/"/>
-  </url>
-  <url>
-    <loc>https://vietkeys.com/ja/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vietkeys.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://vietkeys.com/vi/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://vietkeys.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vietkeys.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vietkeys.com/"/>
-  </url>
-  <url>
-    <loc>https://vietkeys.com/zh/</loc>
-    <lastmod>2026-11-08</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vietkeys.com/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://vietkeys.com/vi/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://vietkeys.com/ja/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://vietkeys.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vietkeys.com/"/>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mlightvn.github.io/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://mlightvn.github.io/app/</loc><lastmod>2026-11-14</lastmod></url>
 </urlset>
